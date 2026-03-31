@@ -1,0 +1,10 @@
+PRUEBA 1:
+Intento 1: maria / 11111 -> Incorrecto
+Intento 2: juan / 23752 -> Correcto
+Resultado: Acceso concedido
+
+PRUEBA 2:
+Intento 1: pedro / 99999 -> Incorrecto
+Intento 2: luis / 55555 -> Incorrecto
+Intento 3: ana / 12345 -> Incorrecto
+Resultado: Cuenta bloqueada
