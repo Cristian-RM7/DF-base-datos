@@ -1,0 +1,48 @@
+import java.util.Scanner;
+
+public class Login {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        // Datos correctos del sistema
+        String usuarioCorrecto = "juan";
+        String passCorrecta = "23752";
+        
+        int intentos = 0;
+        int maxIntentos = 3;
+        boolean acceso = false;
+        
+        System.out.println("=== SISTEMA DE LOGIN ===");
+        System.out.println("Tienes 3 intentos disponibles\n");
+        
+        // Ciclo para permitir hasta 3 intentos
+        while (intentos < maxIntentos) {
+            System.out.print("Usuario: ");
+            String usuario = sc.nextLine();
+            
+            System.out.print("Contraseña: ");
+            String password = sc.nextLine();
+            
+            // Validar si son correctos
+            if (usuario.equals(usuarioCorrecto) && password.equals(passCorrecta)) {
+                System.out.println("\n ¡Acceso concedido! Bienvenido " + usuario);
+                acceso = true;
+                break; // Salir del ciclo
+            } else {
+                intentos++;
+                System.out.println("\n Datos incorrectos");
+                
+                if (intentos < maxIntentos) {
+                    System.out.println("Te quedan " + (maxIntentos - intentos) + " intentos\n");
+                }
+            }
+        }
+        
+        // Si no tuvo acceso
+        if (!acceso) {
+            System.out.println("\n⚠ CUENTA BLOQUEADA - Demasiados intentos fallidos");
+        }
+        
+        sc.close();
+    }
+} 
